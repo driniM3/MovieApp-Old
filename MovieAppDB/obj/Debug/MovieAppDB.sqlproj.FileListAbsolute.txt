@@ -1,0 +1,9 @@
+C:\Users\Administrator\documents\visual studio 2012\Projects\MovieApp\MovieAppDB\bin\Debug\MovieAppDB.dacpac
+C:\Users\Administrator\documents\visual studio 2012\Projects\MovieApp\MovieAppDB\bin\Debug\MovieAppDB.dll
+C:\Users\Administrator\documents\visual studio 2012\Projects\MovieApp\MovieAppDB\bin\Debug\MovieAppDB.pdb
+C:\Users\Administrator\documents\visual studio 2012\Projects\MovieApp\MovieAppDB\obj\Debug\Model.xml
+C:\Users\Administrator\documents\visual studio 2012\Projects\MovieApp\MovieAppDB\obj\Debug\refactor.xml
+C:\Users\Administrator\documents\visual studio 2012\Projects\MovieApp\MovieAppDB\obj\Debug\postdeploy.sql
+C:\Users\Administrator\documents\visual studio 2012\Projects\MovieApp\MovieAppDB\obj\Debug\predeploy.sql
+C:\Users\Administrator\documents\visual studio 2012\Projects\MovieApp\MovieAppDB\obj\Debug\MovieAppDB.dll
+C:\Users\Administrator\documents\visual studio 2012\Projects\MovieApp\MovieAppDB\obj\Debug\MovieAppDB.pdb
