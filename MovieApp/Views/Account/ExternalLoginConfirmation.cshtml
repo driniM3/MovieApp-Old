@@ -2,34 +2,51 @@
 @{
     ViewBag.Title = "Register";
 }
+<div class="row">
+    <div class="col-lg-9 col-lg-offset-3">
+        <hgroup class="title">
+            <h1>@ViewBag.Title.</h1>
+        </hgroup>
+    </div>
+</div>
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>Associate your @ViewBag.ProviderDisplayName account.</h2>
-</hgroup>
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+        <div class="well">
+            <section id="associationForm">
+                <h2>Associate your @ViewBag.ProviderDisplayName account.</h2>
+                @using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
 
-@using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl })) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-
-    <fieldset>
-        <legend>Association Form</legend>
-        <p>
-            You've successfully authenticated with <strong>@ViewBag.ProviderDisplayName</strong>.
+                    <fieldset>
+                        <p>
+                            You've successfully authenticated with <strong>@ViewBag.ProviderDisplayName</strong>.
             Please enter a user name for this site below and click the Confirm button to finish
             logging in.
-        </p>
-        <ol>
-            <li class="name">
-                @Html.LabelFor(m => m.UserName)
-                @Html.TextBoxFor(m => m.UserName)
-                @Html.ValidationMessageFor(m => m.UserName)
-            </li>
-        </ol>
-        @Html.HiddenFor(m => m.ExternalLoginData)
-        <input type="submit" value="Register" />
-    </fieldset>
-}
+                        </p>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.UserName, new { @class = "col-lg-3 control-label" })
+                            <div class="col-lg-9">
+                                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(m => m.UserName)
+
+                                @Html.HiddenFor(m => m.ExternalLoginData)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-12">
+                                <input type="submit" style="float: right; margin-top: 15px" class="btn btn-primary" value="Register" />
+                            </div>
+                        </div>
+                    </fieldset>
+                }
+            </section>
+        </div>
+    </div>
+</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

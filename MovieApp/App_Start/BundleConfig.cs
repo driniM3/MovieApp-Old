@@ -8,8 +8,14 @@ namespace MovieApp
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
         {
+            /**************************************************************/
+            //   CURRENT BUNDLES
+            /**************************************************************/
             bundles.Add(new StyleBundle("~/bundles/bootstrapcss").Include(
                         "~/Content/bootstrap/bootstrap-simplex.css"
+                        ));
+            bundles.Add(new StyleBundle("~/bundles/movieappcss").Include(
+                        "~/Content/MovieApp.css"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrapjs").Include(
@@ -17,6 +23,10 @@ namespace MovieApp
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
+
+            /**************************************************************/
+            //   NOT BEING USED
+            /**************************************************************/
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
