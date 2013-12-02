@@ -3,3 +3,7 @@
     margin-left: auto !important;
     margin-right: auto !important;
 }
+
+hr.black {
+    border-color: black;
+}

@@ -3,7 +3,7 @@
     ViewBag.Title = "Register";
 }
 <div class="row">
-    <div class="col-lg-9 col-lg-offset-3">
+    <div class="col-md-9 col-md-offset-3">
         <hgroup class="title">
             <h1>@ViewBag.Title.</h1>
         </hgroup>
@@ -11,11 +11,11 @@
 </div>
 
 <div class="row">
-    <div class="col-lg-6 col-lg-offset-3">
+    <div class="col-md-6 col-md-offset-3">
         <div class="well">
             <section id="associationForm">
                 <h2>Associate your @ViewBag.ProviderDisplayName account.</h2>
-                @using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }))
+                @using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class="control-form", role="form"}))
                 {
                     @Html.AntiForgeryToken()
                     @Html.ValidationSummary(true)
@@ -27,8 +27,8 @@
             logging in.
                         </p>
                         <div class="form-group">
-                            @Html.LabelFor(m => m.UserName, new { @class = "col-lg-3 control-label" })
-                            <div class="col-lg-9">
+                            @Html.LabelFor(m => m.UserName, new { @class = "col-md-3 control-label" })
+                            <div class="col-md-9">
                                 @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
                                 @Html.ValidationMessageFor(m => m.UserName)
 
@@ -36,7 +36,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-lg-12">
+                            <div class="col-md-12">
                                 <input type="submit" style="float: right; margin-top: 15px" class="btn btn-primary" value="Register" />
                             </div>
                         </div>

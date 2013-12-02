@@ -4,7 +4,7 @@
 }
 
 <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="col-md-8 col-md-offset-2">
         <hgroup class="title">
             <h1>@ViewBag.Title.</h1>
         </hgroup>
@@ -12,7 +12,7 @@
 </div>
 
 <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="col-md-8 col-md-offset-2">
         <p class="message-success">@ViewBag.StatusMessage</p>
 
         <p>You're logged in as <strong>@User.Identity.Name</strong>.</p>
@@ -21,27 +21,29 @@
             <section id="setPasswordForm">
                 @if (ViewBag.HasLocalPassword)
                 {
+
                     @Html.Partial("_ChangePasswordPartial")
                 }
                 else
-                { 
+                {
                     @Html.Partial("_SetPasswordPartial")
                 }
+
             </section>
 
             <section id="externalLogins">
-                    @Html.Action("RemoveExternalLogins")
+                @Html.Action("RemoveExternalLogins")
 
-                    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+                @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
 
             </section>
 
         </div>
-    
-    <div class="col-lg-2"></div>
+
+        <div class="col-lg-2"></div>
 
 
-</div>
+    </div>
 </div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
